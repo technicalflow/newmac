@@ -76,6 +76,7 @@ brew=(
     wget
     mc
     mtr
+    gotop
     azure-cli
     m-cli
     terraform
