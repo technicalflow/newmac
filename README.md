@@ -2,9 +2,13 @@
 Feel free to use it<br>
 <br>
 What it does:<br>
-Copy my bash profile, tmux, htop and sample ssh config<br>
-It installs https://brew.sh/<br>
-and with brew software I use every day :)<br>
+<ul>
+    <li>copies my bash profile, tmux, htop and sample ssh config<br>
+    <li>It installs https://brew.sh/<br>
+    <li>and with brew it installs software I use every day :)<br>
+    <li>plus some App Store apps
+    <li>and Visual Studio Code extensions
+</ul>
 <br>
 
 RUN: <br>
