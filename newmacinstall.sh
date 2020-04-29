@@ -227,6 +227,12 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true #Removes 
 defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool false #Stop the automatic save to iCloud thing
 defaults write com.apple.NSGlobalDomain NSWindowResizeTime -float 0.001 
 defaults write com.apple.NSGlobalDomain NSAutomaticCapitalizationEnabled -bool NO #Disabling Automatic Capitalization
+defaults write com.apple.finder ShowPathbar -bool true #Adds the path bar to the bottom of the finder
+# defaults write com.apple.finder DisableAllAnimations -bool true #Disable Finder Animations
+
+
+killall dock
+killall Finder
 
 # rm -rf ~/newmacinstall.sh
 #end
