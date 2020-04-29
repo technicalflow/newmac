@@ -29,9 +29,9 @@ alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias clonevagrant='git clone https://github.com/technicalflow/vagrant.git'
 alias ll='ls -la'
-alias wttr='curl wttr.in'
-alias vpnc='networksetup -connectpppoeservice "VPN Biuro"'
-alias vpnd='networksetup -disconnectpppoeservice "VPN Biuro"'
+alias wttr='curl wttr.in' #Check the weather in your region from commandline
+alias vpnc='networksetup -connectpppoeservice "Office"'
+alias vpnd='networksetup -disconnectpppoeservice "Office"'
 alias ipc='ifconfig | grep -w inet'
 alias ns="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip"
 alias tt="tmux a"
@@ -81,11 +81,11 @@ brew=(
 )
 
 cask=(
-    bitbar
-    keka
+    #bitbar
+    #keka
     spotify
-    switchresx
-    typora
+    #switchresx
+    #typora
     github
     visual-studio-code
     scroll-reverser
@@ -221,5 +221,5 @@ defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool false
 defaults write com.apple.NSGlobalDomain NSWindowResizeTime -float 0.001 
 defaults write com.apple.NSGlobalDomain NSAutomaticCapitalizationEnabled -bool NO #Disabling Automatic Capitalization
 
-rm -rf ~/newmacinstall.sh
+# rm -rf ~/newmacinstall.sh
 #end
