@@ -35,7 +35,10 @@ alias vpnd='networksetup -disconnectpppoeservice "Office"'
 alias ipc='ifconfig | grep -w inet'
 alias ns="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip"
 alias tt="tmux a"
+alias tn="tmux new -s base"
 alias ttn="tmux attach -t base || tmux new -s base"
+alias txt='open -a /System/Applications/TextEdit.app/'
+
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
 # Enable Spotlight
@@ -152,12 +155,15 @@ bind C-a send-prefix
 
 # new-session -n $HOST
 
-set -g mouse on
-set -s escape-time 0
+# set -g mouse on
+# set -s escape-time 0
 
 set -g status-interval 60
+
 WEATHER='#(curl -s wttr.in/Poznan?format\="%%l:+%%c%%20%%t%%60%&period=60")'
 BATTERY='#(pmset -g batt | cut -c 33-65)'
+
+# setw -g clock-mode-colour yellow
 
 # Set status bar
 set -g status-bg colour18
@@ -165,10 +171,10 @@ set -g status-fg white
 
 set -g status-justify left
 set -g status-right-length 60
-set -g status-left-length 35
+set -g status-left-length 50
 
 set -g status-right "$WEATHER | $BATTERY"
-set -g status-left "%H:%M | #[fg=green]#H "
+set -g status-left  "#[fg=yellow] %H:%M | %d/%m | #[fg=green]#H "
 
 set -g terminal-overrides xterm*:smcup@:rmcup@
 
