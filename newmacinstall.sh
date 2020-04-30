@@ -27,7 +27,7 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
 alias topforever='top -l 9999999 -s 10 -o cpu'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-alias clonevagrant='git clone https://github.com/technicalflow/vagrant.git'
+alias vclone='git clone https://github.com/technicalflow/vagrant.git'
 alias ll='ls -la'
 alias wttr='curl wttr.in' #Check the weather in your region from commandline
 alias vpnc='networksetup -connectpppoeservice "Office"'
@@ -38,6 +38,7 @@ alias tt="tmux a"
 alias tn="tmux new -s base"
 alias ttn="tmux attach -t base || tmux new -s base"
 alias txt='open -a /System/Applications/TextEdit.app/'
+alias vmrun='/Applications/VMware Fusion.app/Contents/Library/vmrun'
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
@@ -229,9 +230,11 @@ defaults write com.apple.NSGlobalDomain NSWindowResizeTime -float 0.001
 defaults write com.apple.NSGlobalDomain NSAutomaticCapitalizationEnabled -bool NO #Disabling Automatic Capitalization
 defaults write com.apple.finder ShowPathbar -bool true #Adds the path bar to the bottom of the finder
 # defaults write com.apple.finder DisableAllAnimations -bool true #Disable Finder Animations
+defaults write com.apple.dock springboard-rows -int 5
+defaults write com.apple.dock springboard-columns -int 9
 
 
-killall dock
+killall Dock
 killall Finder
 
 # rm -rf ~/newmacinstall.sh
