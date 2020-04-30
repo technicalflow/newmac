@@ -94,14 +94,14 @@ cask=(
     github
     visual-studio-code
     scroll-reverser
-    aware
     macs-fan-control
     powershell
     vagrant
 )
 
 mas=(
-    409203825 #Numbers 
+    409203825 #Numbers
+    1082170746 #Aware  
     568494494 #Pocket
     803453959 #Slack
     1176895641 #Spark
