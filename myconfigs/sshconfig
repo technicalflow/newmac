@@ -1,5 +1,0 @@
-# SSH config
-Host hostname
-	Hostname hostname.com
-	User user
-	Port port number
