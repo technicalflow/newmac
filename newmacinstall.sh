@@ -216,6 +216,11 @@ right_meters=RightCPUs Tasks LoadAverage Uptime
 right_meter_modes=1 2 2 2
 EOFhtop
 
+# Turn Off Spotlights in this locations
+alias spotoffdane='sudo mdutil -i off /Volumes/dane'
+alias spotoffdata='sudo mdutil -i off ~/data'
+alias spotoffonedrive='sudo mdutil -i off ~/OneDrive'
+
 # write defaults
 defaults write com.apple.TextEdit RichText -int 0 #Sets Texedit to Automatically Open in Plain Text
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true #Closes Print Dialog Box After Printing is Complete
@@ -232,7 +237,7 @@ defaults write com.apple.finder ShowPathbar -bool true #Adds the path bar to the
 # defaults write com.apple.finder DisableAllAnimations -bool true #Disable Finder Animations
 defaults write com.apple.dock springboard-rows -int 5
 defaults write com.apple.dock springboard-columns -int 9
-
+defaults write /Library/Preferences/com.apple.SpotlightServer.plist ExternalVolumesIgnore -bool True # stop indexing external drives and network shares
 
 killall Dock
 killall Finder
