@@ -9,7 +9,6 @@ HISTFILESIZE=2000
 export EDITOR='nano'
 export PATH="$PATH:/usr/local/bin/"
 export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
-export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 alias myip='curl icanhazip.com' # myip: Public facing IP Address
 alias netcons='lsof -i' # netCons: Show all open TCP/IP sockets
@@ -61,7 +60,7 @@ Host hostname
 EOFssh
 
 #Install xcode
-xcode-select -install
+xcode-select --install
 
 #Moving to home directory at the beginning of the process
 cd ~ 
