@@ -54,9 +54,9 @@ EOFbash
 cat << EOFssh > ~/.ssh/config
 # SSH config
 Host hostname
-	Hostname hostname.com
-	User user
-	Port port number
+	Hostname
+	User
+	Port
 EOFssh
 
 #Install xcode
@@ -68,7 +68,7 @@ cd ~
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew=(
-    ffmpeg
+#    ffmpeg
     git
     htop
     mas
@@ -81,20 +81,20 @@ brew=(
     m-cli
     terraform
     ansible
-    kubernetes-cli
+#    kubernetes-cli
 )
 
 cask=(
     #bitbar
     #keka
     spotify
-    #switchresx
-    #typora
+    typora
     github
     visual-studio-code
     scroll-reverser
     macs-fan-control
     powershell
+    virtualbox
     vagrant
 )
 
@@ -114,14 +114,14 @@ vscode=(
     vscoss.vscode-ansible
     ms-vscode.azure-account
     ms-azuretools.vscode-azureterraform
-    mauve.terraform
+#    mauve.terraform
     ms-azuretools.vscode-docker
     ms-vscode.powershell
-    formulahendry.docker-explorer
-    mhutchie.git-graph
+#    formulahendry.docker-explorer
+#    mhutchie.git-graph
     ms-azuretools.vscode-azurevirtualmachines
     ms-vscode.vscode-node-azure-pack
-    bbenoist.vagrant
+#    bbenoist.vagrant
 )
 
 brew update
@@ -216,8 +216,8 @@ right_meter_modes=1 2 2 2
 EOFhtop
 
 # Turn Off Spotlights in this locations
-alias spotoffdane='sudo mdutil -i off /Volumes/dane'
-alias spotoffdata='sudo mdutil -i off ~/data'
+alias spotoffdane='sudo mdutil -i off /Volumes/Data'
+alias spotofflab='sudo mdutil -i off ~/lab'
 alias spotoffonedrive='sudo mdutil -i off ~/OneDrive'
 
 # write defaults
@@ -225,10 +225,10 @@ defaults write com.apple.TextEdit RichText -int 0 #Sets Texedit to Automatically
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true #Closes Print Dialog Box After Printing is Complete
 defaults write com.apple.NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool FALSE #Remove Save to iCloud Functionality
 defaults write com.apple.dock tilesize -int 48 #Setting Icon Size to 48 Pixels
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true #Removes External Drives on Desktop
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true #Removes Internal Drives on Desktop
-defaults write com.apple.finder ShowMountedServersOnDesktop -bool true #Removes Mounted Servers on Desktop
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true #Removes Removable Media on Desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true #External Drives on Desktop
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true #Internal Drives on Desktop
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true #Mounted Servers on Desktop
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true #Removable Media on Desktop
 defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool false #Stop the automatic save to iCloud thing
 defaults write com.apple.NSGlobalDomain NSWindowResizeTime -float 0.001 
 defaults write com.apple.NSGlobalDomain NSAutomaticCapitalizationEnabled -bool NO #Disabling Automatic Capitalization
