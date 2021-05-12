@@ -26,7 +26,6 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
 alias topforever='top -l 9999999 -s 10 -o cpu'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-alias vclone='git clone https://github.com/technicalflow/vagrant.git'
 alias ll='ls -la'
 alias wttr='curl wttr.in' #Check the weather in your region from commandline
 alias vpnc='networksetup -connectpppoeservice "Office"'
@@ -36,8 +35,8 @@ alias ns="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/
 alias tt="tmux a"
 alias tn="tmux new -s base"
 alias ttn="tmux attach -t base || tmux new -s base"
-alias txt='open -a /System/Applications/TextEdit.app/'
-alias vmrun='/Applications/VMware Fusion.app/Contents/Library/vmrun'
+alias txt='open -a /Applications/TextEdit.app/'
+#alias vmrun='/Applications/VMware Fusion.app/Contents/Library/vmrun'
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
@@ -51,12 +50,14 @@ alias backup="curl -s https://raw.githubusercontent.com/restic/others/master/REA
 # complete -d cd
 EOFbash
 
+mkdir -p ~/.ssh
+touch ~/.ssh/config
 cat << EOFssh > ~/.ssh/config
 # SSH config
-Host hostname
-	Hostname
-	User
-	Port
+Host
+  Hostname
+  User
+  Port
 EOFssh
 
 #Install xcode
@@ -94,8 +95,8 @@ cask=(
     scroll-reverser
     macs-fan-control
     powershell
-    virtualbox
-    vagrant
+#    virtualbox
+#    vagrant
 )
 
 mas=(
@@ -107,7 +108,6 @@ mas=(
     1147396723 #WhatsApp
     1295203466 #MS RDP
     823766827 #Onedrive
-    #1438841416 #renameX
 )
 
 vscode=(
@@ -130,7 +130,7 @@ brew upgrade
 #Homebrew App Installer
 brew install ${brew[@]} 
 #Casks Installer
-brew cask install --appdir="/Applications" ${cask[@]} 
+brew install --appdir="/Applications" ${cask[@]} 
 #Mac App Store Installer
 mas install ${mas[@]} 
 #install VS Code extensions
@@ -145,6 +145,7 @@ code --install-extension ${vscode[@]}
 #copy myconfigs
 cd ~
 
+touch ~/.ltmux.conf
 cat << EOFtmux > ~/.tmux.conf
 unbind %
 bind | split-window -h
@@ -186,6 +187,8 @@ set -g terminal-overrides xterm*:smcup@:rmcup@
 
 EOFtmux
 
+mkdir -p ~/.config/htop
+touch ~/.config/htop/htoprc
 cat << EOFhtop > ~/.config/htop/htoprc
 # Beware! This file is rewritten by htop when settings are changed in the interface.
 # The parser is also very primitive, and not human-friendly.
@@ -208,7 +211,7 @@ cpu_count_from_zero=0
 update_process_names=0
 account_guest_in_cpu_meter=0
 color_scheme=0
-delay=15
+delay=20
 left_meters=LeftCPUs Memory Swap
 left_meter_modes=1 1 1
 right_meters=RightCPUs Tasks LoadAverage Uptime
