@@ -71,6 +71,7 @@ cd ~
 brew=(
 #    ffmpeg
     git
+    gh
     htop
     mas
     tmux
@@ -78,10 +79,13 @@ brew=(
     mc
     mtr
     gotop
+    iperf
     azure-cli
     m-cli
     terraform
     ansible
+    youtube-dl
+    hugo
 #    kubernetes-cli
 )
 
@@ -220,7 +224,6 @@ EOFhtop
 
 # Turn Off Spotlights in this locations
 alias spotoffdane='sudo mdutil -i off /Volumes/Data'
-alias spotofflab='sudo mdutil -i off ~/lab'
 alias spotoffonedrive='sudo mdutil -i off ~/OneDrive'
 
 # write defaults
