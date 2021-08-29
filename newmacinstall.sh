@@ -35,19 +35,12 @@ alias ns="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/
 alias tt="tmux a"
 alias tn="tmux new -s base"
 alias ttn="tmux attach -t base || tmux new -s base"
-alias txt='open -a /Applications/TextEdit.app/'
-#alias vmrun='/Applications/VMware Fusion.app/Contents/Library/vmrun'
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
 # Enable Spotlight
 alias spoton="sudo mdutil -a -i on"
 
-alias backup="curl -s https://raw.githubusercontent.com/restic/others/master/README.md | grep encrypted | grep incremental | grep dedup"
-
-#NEW
-# shopt -s cdspell
-# complete -d cd
 EOFbash
 
 mkdir -p ~/.ssh
@@ -66,7 +59,7 @@ xcode-select --install
 #Moving to home directory at the beginning of the process
 cd ~ 
 #Install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew=(
 #    ffmpeg
@@ -96,11 +89,11 @@ cask=(
     typora
     github
     visual-studio-code
-    scroll-reverser
+    #scroll-reverser
     macs-fan-control
     powershell
-#    virtualbox
-#    vagrant
+    #virtualbox
+    #vagrant
 )
 
 mas=(
@@ -121,11 +114,8 @@ vscode=(
 #    mauve.terraform
     ms-azuretools.vscode-docker
     ms-vscode.powershell
-#    formulahendry.docker-explorer
-#    mhutchie.git-graph
     ms-azuretools.vscode-azurevirtualmachines
     ms-vscode.vscode-node-azure-pack
-#    bbenoist.vagrant
 )
 
 brew update
@@ -165,22 +155,20 @@ bind C-a send-prefix
 # set -s escape-time 0
 
 set -g status-interval 60
+set -g default-terminal "screen-256color"
 
-WEATHER='#(curl -s wttr.in/Poznan?format\="%%l:+%%c%%20%%t%%60%&period=60")'
-BATTERY='#(pmset -g batt | cut -c 33-65)'
-
-# setw -g clock-mode-colour yellow
+setw -g clock-mode-colour white
 
 # Set status bar
-set -g status-bg colour18
+set -g status-bg colour8
 set -g status-fg white
 
 set -g status-justify left
-set -g status-right-length 60
-set -g status-left-length 50
+set -g status-right-length 80
+set -g status-left-length 60
 
-set -g status-right "$WEATHER | $BATTERY"
-set -g status-left  "#[fg=yellow] %H:%M | %d/%m | #[fg=green]#H "
+set -g status-right "#[fg=yellow]%H:%M | %d/%m"
+set -g status-left  "#[fg=green]#H "
 
 set -g terminal-overrides xterm*:smcup@:rmcup@
 
@@ -223,7 +211,6 @@ right_meter_modes=1 2 2 2
 EOFhtop
 
 # Turn Off Spotlights in this locations
-alias spotoffdane='sudo mdutil -i off /Volumes/Data'
 alias spotoffonedrive='sudo mdutil -i off ~/OneDrive'
 
 # write defaults
@@ -242,7 +229,6 @@ defaults write com.apple.finder ShowPathbar -bool true #Adds the path bar to the
 # defaults write com.apple.finder DisableAllAnimations -bool true #Disable Finder Animations
 defaults write com.apple.dock springboard-rows -int 5
 defaults write com.apple.dock springboard-columns -int 9
-defaults write /Library/Preferences/com.apple.SpotlightServer.plist ExternalVolumesIgnore -bool True # stop indexing external drives and network shares
 
 killall Dock
 killall Finder
