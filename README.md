@@ -11,7 +11,7 @@ What it does:<br>
 </ul>
 <br>
 
-TO check it run:<br>
+To check it run:<br>
 git clone https://github.com/technicalflow/newmac.git && sh ./newmac/newmacinstall.sh <br>
 or <br>
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/technicalflow/newmac/master/newmacinstall.sh)"
